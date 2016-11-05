@@ -1,0 +1,9 @@
+Look through 2015 Government Procurement data.
+
+1) Develop algorithm to visualise the date:
+  a. What proportion goes to local companies? What proportion goes to foreign companies?
+  b. What type of procurement goes to foreign, local? How to differentiate between fully local, foreign and local subsidiary?
+  c. What types of procurement are there? Which are the higher value add ones?
+  d. What type of procurements are there for the growth sectors: healthcare, urban, digital, logistics, ame
+  e. What is the value of procurement that goes to foreign? To local?
+  f. What is the total value of "higher value add" procurement?

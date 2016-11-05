@@ -1,0 +1,67 @@
+# Metadata for Government Procurement
+---
+Identifier: '085dd6c3-387b-4661-ab26-02e422ad1286'
+Name: 'government-procurement'
+Title: 'Government Procurement'
+Description: 'Open tenders that were awarded in 2015.'
+Topics:
+  - 'Finance'
+Keywords:
+  - 'GeBIZ'
+  - 'procurement'
+Publisher:
+  Name: 'Ministry of Finance'
+Sources:
+  - 'Ministry of Finance'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Annual'
+Coverage: '2015-01-02 to 2015-12-31'
+Last Updated: '2016-10-18T02:53:46.957224'
+Resources:
+  -
+    Identifier: 'b9d8d509-5cb6-45dc-bb46-9508e670e3c2'
+    Name: 'government-procurement-via-gebiz-2015.csv'
+    Title: 'Government Procurement via GeBIZ (2015)'
+    Url: 'https://data.gov.sg/dataset/085dd6c3-387b-4661-ab26-02e422ad1286/resource/b9d8d509-5cb6-45dc-bb46-9508e670e3c2/download/government-procurement-via-gebiz-2015.csv'
+    Format: 'CSV'
+    Coverage: '2015-01-02 to 2015-12-31'
+    Last Updated: '2016-10-18T02:53:46.940143'
+    Schema:
+      -
+        Name: 'tender_no.'
+        Title: 'Tender No.'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'agency'
+        Title: 'Agency'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'tender_description'
+        Title: 'Tender Description'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'award_date'
+        Title: 'Award Date'
+        Type: 'datetime'
+        Sub Type: 'date'
+        Format: 'YYYY-MM-DD'
+      -
+        Name: 'tender_detail_status'
+        Title: 'Tender Detail Status'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'supplier_name'
+        Title: 'Supplier Name'
+        Type: 'text'
+        Sub Type: 'general'
+        Description: '"na" : Data not available or not applicable'
+      -
+        Name: 'total_awarded_amt'
+        Title: 'Total Awarded Amt'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'S$'
