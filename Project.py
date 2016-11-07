@@ -3,6 +3,12 @@ import pandas as pd
 import numpy as np
 import csv
 
+#Visualisation Libraries
+import seaborn as sns
+import matplotlib.pyplot as plt
+plt.rcParams['figure.figsize'] = (8, 6)
+plt.rcParams['font.size'] = 14
+
 #Open CSV file containing - Singapore Government Procurement Record for 2015
 #Source: data.gov.sg
 filename = '/Users/xuanrong/mystuff/git/GovtProcurement/government-procurement/government-procurement-via-gebiz-2015.csv'
@@ -20,20 +26,34 @@ gp = pd.read_csv(filename, header=0, names=cols)
 #print gp.info()
 #print gp.dtypes
 
-#Visualisation of data
-# 1. Total number of agencies involved
+# A. Visualisation of raw dataset
+#   1. Total number of agencies involved
 gp_agencies = gp['Agency'].nunique()
 #print gp_agencies
 
-# 2. The number of procurements conducted by each agency in 2015
+#   2. The number of procurements conducted by each agency in 2015
 gp_number = gp['Agency'].value_counts()
 #print gp_number
+#Create bar chart of top 10 agencies by procurement numbers
+gp.Agency.value_counts().head(10).plot(kind='bar')
+plt.savefig("Number_gp", format='pdf')
 
-# 3. The total awarded amount by each agency in 2015
+
+#   3. The total awarded amount by each agency in 2015
 gp_amount = gp.groupby('Agency')['Total Awarded Amount'].sum().sort_values(ascending=False)
-"""Convert awarded amounts into something more readable, e.g. "millions""""
+"""Convert awarded amounts into something more readable, e.g. 25 million, instead of 2.5e7"""
 #print gp_amount
+#print out chart
 
-# 4. The average value each procurement by each agency in 2015
+
+
+#   4. The average value each procurement by each agency in 2015
 gp_average_amount = gp.groupby('Agency')['Total Awarded Amount'].mean().sort_values(ascending=False)
-#print gp_average_amount
+gp_average_amount
+
+# 5. List out all procurements by specified agency in 2015
+#print gp[gp.Agency == 'Defence Science and Technology Agency'][['Tender Description','Supplier Name','Total Awarded Amount']]
+#print gp[gp.Agency == 'Nanyang Technological University'][['Tender Description','Supplier Name','Total Awarded Amount']]
+
+# B. Cleaning of Dataset
+#   1. Remove supposedly erroneous entries (e.g. expensive catering by DSTA)
