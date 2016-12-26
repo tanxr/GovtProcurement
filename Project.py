@@ -1,13 +1,17 @@
 
 import pandas as pd
+pd.set_option('display.width',5000)
+
 import numpy as np
 import csv
+
 
 #Visualisation Libraries
 import seaborn as sns
 import matplotlib.pyplot as plt
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.rcParams['font.size'] = 14
+pd.set_option('display.max_columns', 5)
 
 #Open CSV file containing - Singapore Government Procurement Record for 2015
 #Source: data.gov.sg
@@ -35,8 +39,8 @@ gp_agencies = gp['Agency'].nunique()
 gp_number = gp['Agency'].value_counts()
 #print gp_number
 #Create bar chart of top 10 agencies by procurement numbers
-gp.Agency.value_counts().head(10).plot(kind='bar')
-plt.savefig("Number_gp", format='pdf')
+#gp.Agency.value_counts().head(10).plot(kind='bar')
+#plt.savefig("Number_gp", format='pdf')
 
 
 #   3. The total awarded amount by each agency in 2015
@@ -46,14 +50,16 @@ gp_amount = gp.groupby('Agency')['Total Awarded Amount'].sum().sort_values(ascen
 #print out chart
 
 
-
 #   4. The average value each procurement by each agency in 2015
 gp_average_amount = gp.groupby('Agency')['Total Awarded Amount'].mean().sort_values(ascending=False)
-gp_average_amount
+#print gp_average_amount
 
 # 5. List out all procurements by specified agency in 2015
-#print gp[gp.Agency == 'Defence Science and Technology Agency'][['Tender Description','Supplier Name','Total Awarded Amount']]
-#print gp[gp.Agency == 'Nanyang Technological University'][['Tender Description','Supplier Name','Total Awarded Amount']]
+specified_agency = 'Infocommunications Development Authority of Singapore'
+agency_gp_amount = gp[gp.Agency == specified_agency]['Total Awarded Amount'].sum()
+print "%s procured goods and services worth a total of $%d in 2015." % (specified_agency, agency_gp_amount)
+print gp[gp.Agency == specified_agency][['Tender Description','Supplier Name','Total Awarded Amount']]
+
 
 # B. Cleaning of Dataset
 #   1. Remove supposedly erroneous entries (e.g. expensive catering by DSTA)

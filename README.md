@@ -3,7 +3,7 @@
 Objective of project:
 - Create a tool which other team members can use to analyse trends in Government Procurement, based on 2015 data and future data.
 - Identify high value add procurement opportunities which currently go to foreign companies, but could have gone to local companies.
-- Identify insights behind trends in government procurement (e.g. which part of the year do most procurements take place?)
+- Identify insights behind trends in government procurement (e.g. which month of the year do most procurements take place?)
 
 
 A. Visualisation of data
@@ -15,10 +15,12 @@ A. Visualisation of data
 
 
 B. Cleaning of Dataset
-1. Remove supposedly erroneous entries (e.g. expensive catering by DSTA)
+1. Remove supposedly erroneous entries (e.g. expensive catering by DSTA?)
 
 
 C. Analysis
 1. Differentiate amongst different types of procurements (e.g. services, products, value add)
+    - a. Clustering
 2. Differentiate amongst different types of suppliers (e.g. local companies, foreign incorporated companies, local subsidiaries of foreign companies)
+    - a. Clustering
 3. Which are the top 5 agencies which conduct high value add procurements
